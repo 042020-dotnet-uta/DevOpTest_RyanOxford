@@ -8,7 +8,7 @@ trigger:
 - master
 
 pool: 
-  vmImage: 'ubunti-latest'
+  vmImage: 'ubuntu-latest'
 
 variables:
 - name: 'instructor'
