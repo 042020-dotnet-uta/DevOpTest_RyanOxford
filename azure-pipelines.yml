@@ -7,7 +7,8 @@
 trigger:
 - master
 
-pool: 'ubunti-latest'
+pool: 
+  vmImage: 'ubunti-latest'
 
 variables:
 - name: 'instructor'
@@ -25,14 +26,11 @@ stages:
           - script: 'dotnet build'
           - script: echo Hey there $(instructor)!
 
-  - stage:
-    jobs:
       - job: 'test'
         dependsOn: 'build'
         steps:
           - script: 'dotnet test'
-  - stage:
-    jobs:
+
       - job: 'publish'
         dependsOn: 'test'
         steps:
